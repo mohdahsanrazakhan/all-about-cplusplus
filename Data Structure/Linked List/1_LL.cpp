@@ -397,12 +397,6 @@ void Reverse3(struct Node *q, struct Node *p)
         first = q;
 }
 
-// Concatenating two linked list
-
-// Merge two linked list
-
-// Is loop or not
-
 int main()
 {
     int arr[] = {2, 4, 5, 1, 1, 1, 1, 6, 8, 10};
