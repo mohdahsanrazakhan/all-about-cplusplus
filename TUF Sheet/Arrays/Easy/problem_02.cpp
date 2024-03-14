@@ -42,7 +42,7 @@ void getElementsBetter(int arr[], int n) {
 }
 
 // Optimal Approach
-// TC: | SC:
+// TC: O(N), Single-pass solution | SC: O(1)
 int secondSmallest(int arr[], int n) {
 	// Edge case
 	if(n < 2)
