@@ -41,10 +41,54 @@ void getElementsBetter(int arr[], int n) {
 	cout << "Second largest = " << secLargest << endl;
 }
 
+// Optimal Approach
+// TC: | SC:
+int secondSmallest(int arr[], int n) {
+	// Edge case
+	if(n < 2)
+		cout << -1;
+	
+	int smallest = INT_MAX, secSmallest = INT_MAX, i;
+	
+	for(i = 0; i < n; i++) {
+		if(arr[i] < smallest) {
+			secSmallest = smallest;
+			smallest = arr[i];
+		}
+		else if(arr[i] < secSmallest && arr[i] != smallest) {
+			secSmallest = arr[i];
+		}
+	}
+	return secSmallest;
+}
+
+int secondLargest(int arr[], int n) {
+	// Edge case
+	if(n < 2)
+		cout << -1;
+	
+	int largest = INT_MIN, secLargest = INT_MIN, i;
+	
+	for(i = 0; i < n; i++) {
+		if(arr[i] > largest) {
+			secLargest = largest;
+			largest = arr[i];
+		}
+		else if(arr[i] > secLargest && arr[i] != largest) {
+			secLargest = arr[i];
+		}
+	}
+	return secLargest;
+}
+
 int main() {
 	int arr[] = {1,2,4,8,10,7};
 	int n = sizeof(arr)/sizeof(arr[0]);
 	getElements(arr, n);
 	getElementsBetter(arr, n);
+	int second_Smallest = secondSmallest(arr, n);
+	int second_Largest = secondLargest(arr, n);
+	cout << "Second smallest = " << second_Smallest << endl;
+	cout << "Second largest = " << second_Largest << endl;
 	return 0;
 }
