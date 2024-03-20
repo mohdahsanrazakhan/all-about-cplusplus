@@ -4,6 +4,7 @@ using namespace std;
 // Brute Force Approach
 // Using a temp array -> TC: O(N) | SC: O(k)	
 void rotateToRight(int arr[], int n, int k) {
+	// Edge Cases
 	if(n == 0) return;
 	k = k % n;
 	if(k > n) return;
@@ -23,6 +24,7 @@ void rotateToRight(int arr[], int n, int k) {
 
 // Using a temp array -> TC: O(N) | SC: O(k)
 void rotateToLeft(int arr[], int n, int k) {
+    // Edge Cases	
 	if(n == 0) return;
 	k = k % n;
 	if(k > n) return;
@@ -41,7 +43,7 @@ void rotateToLeft(int arr[], int n, int k) {
 }
 
 // Optimal Approach
-// Reversal Algorithm -> 
+// Reversal Algorithm -> TC: O(N) | SC: O(1)
 /* Function to Reverse the array */
 void Reverse(int arr[], int start, int end) {
 	
@@ -57,6 +59,11 @@ void Reverse(int arr[], int start, int end) {
 /* Function to Rotate k elements to right */
 void rightRotate(int arr[], int n, int k) {
 	
+	// Edge Cases
+	if(n == 0) return;
+	k = k % n;
+	if(k > n) return;
+ 	
 	// Reverse first n-k elements
 	Reverse(arr, 0, n-k-1);
 	
@@ -64,6 +71,24 @@ void rightRotate(int arr[], int n, int k) {
 	Reverse(arr, n-k, n-1);
 	
 	// Reverse whole array
+	Reverse(arr, 0, n-1);
+}
+
+/* Function to Rotate k elements to left */
+void leftRotate(int arr[], int n, int k) {
+	
+	// Edge Cases
+	if(n == 0) return;
+	k = k % n;
+	if(k > n) return;
+	
+	// Rotate first k elements
+	Reverse(arr, 0, k-1);
+	
+	// Rotate last n-k elements
+	Reverse(arr, k, n-1);
+	
+	// Rotete whole array
 	Reverse(arr, 0, n-1);
 }
 
@@ -93,6 +118,12 @@ int main() {
 	}
 	cout << endl;
 	
+	leftRotate(arr, n, k);
+	cout << "After rotating the elements to left: " << endl;
+	for(int i = 0; i < n; i++) {
+		cout << arr[i] << " ";
+	}
+	cout << endl;	
 	
 	return 0;
 }
