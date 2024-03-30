@@ -3,22 +3,44 @@ using namespace std;
 
 int CheckPassword(char str[], int sz) {
 	
-	if(str[0] >= 0 && str[0] <= 9) {
+	// If less then 4, return 0
+	if(sz < 4) {
 		return 0;
 	}
 	
-	for(int i = 0; i < sz - 1; i++) {
-		if(str[i] == ' ' || str[i] == '/') {
+	// if starting character is a number, return 0
+	// str[0] - '0' -> Converts the character representation 
+	// of a digit to its corresponding integer value.
+	if(str[0] - '0' >= 0 && str[0] - '0' <= 9) {
+		return 0;
+	}
+	
+	int idx = 0, capitalCnt = 0, numberCnt = 0;
+	
+	while(idx < sz) {
+		// if space or / is present, return 0
+		if(str[idx] == ' ' || str[idx] == '/') {
 			return 0;
 		}
-		if((str[i] >= 65 || str[i] <= 90) && (str[i] >= 0 || str[i] <= 9))
-			return 1;
+		if(str[idx] >= 65 && str[idx] <= 90) {
+			capitalCnt++;
+		}
+		if(str[idx] - '0' >= 0 && str[idx] - '0' <= 9) {
+			numberCnt++;
+		}
+		idx++;
 	}
+	
+	return capitalCnt > 0 && numberCnt > 0;
 }
 
 int main() {
-	char str[] = "aA1_67";
-	int sz = sizeof(str)/sizeof(str[0]); // size + 1
+	string pwdStr;
+	getline(cin, pwdStr);
+	int sz = pwdStr.size();
+	char *str = &pwdStr[0];
 	
 	cout << CheckPassword(str, sz);
+	
+	return 0;
 }
