@@ -865,3 +865,147 @@ int main() {
 	return 0;
 }
 ```
+
+## Execute the function `autoCount(n)`:
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+
+int findAutoCount(char *n) {
+	int valueCount[10]={0},freq[10]={0};
+	int count=0;
+	
+	for(int i=0;n[i]!='\0';i++) {
+		valueCount[n[i]-'0']++;
+	}
+		
+	for(int i=0;i<10;i++) {
+		if(valueCount[i]>0)
+			count++;
+	}
+			
+	for(int i=0;n[i]!='\0';i++) {
+		valueCount[i]=valueCount[i]-(n[i]-'0');
+	}
+		
+	for(int i=0;i<10;i++)
+	{
+		if(valueCount[i]!=0)
+			return 0;
+	}
+	return count;
+}
+
+int main()
+{
+	char str[11];
+	scanf("%s",str);
+	cout << findAutoCount(str);
+}
+```
+
+## Find if the given string is a palindrome or not:
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+
+bool isPalindrome(string str) {
+	
+	string reverseStr;
+	
+	reverse_copy(str.begin(), str.end(), back_inserter(reverseStr));
+	
+	for(int i = 0; i < str.size(); i++) {
+		if(str[i] != reverseStr[i]) {
+			return 0;
+		}
+	}
+	return 1;
+}
+
+int main() {
+	string str;
+	getline(cin, str);
+	
+	cout << isPalindrome(str);
+}
+```
+
+## Program to print Collatz Sequence:
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+
+void collatzSequence(int n) {
+	
+	while(n != 1) {
+		
+		cout << n << " ";	
+			
+		if(n % 2 == 0) {
+			n /= 2;
+		}
+		else {
+			n = 3*n+1;
+		}
+	}
+	cout << n; // print 1
+}
+
+int main() {
+	int n;
+	cin >> n;
+	collatzSequence(n);
+}
+```
+
+## Print a given matrix in spiral form:
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+
+vector<int> spiralOrder(vector<vector<int>> &matrix) {
+	int rows = matrix.size(), cols = matrix[0].size();
+	vector<int> result;
+	
+	if(rows == 0) return result;
+	
+	vector<vector<bool>> tracked(rows, vector<bool>(cols, false));
+	int dr[] = { 0, 1, 0, -1};
+	int dc[] = { 1, 0, -1, 0};
+	
+	int x = 0, y = 0, di = 0;
+	
+	// Iterate from 0 to rows*cols-1
+	for(int i = 0; i < rows*cols; i++) {
+		result.push_back(matrix[x][y]);
+		
+		tracked[x][y] = true;
+		int newX = x + dr[di];
+		int newY = y + dc[di];
+		
+		if(0 <= newX && newX < rows && 0 <= newY && newY < cols && !tracked[newX][newY]) {
+			x = newX;
+			y = newY;
+		}
+		else {
+			di = (di + 1) % 4;
+			x += dr[di];
+			y += dc[di];
+		}
+	}
+	return result;
+}
+
+int main() {
+	vector<vector<int>> mtx{ { 1, 2, 3, 4 },
+                           { 5, 6, 7, 8 },
+                           { 9, 10, 11, 12 },
+                           { 13, 14, 15, 16 } };
+                           
+	for(int it : spiralOrder(mtx)) {
+		cout << it  << " ";
+	}
+	return 0;
+}
+```
