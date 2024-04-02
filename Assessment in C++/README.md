@@ -1009,3 +1009,169 @@ int main() {
 	return 0;
 }
 ```
+
+## Find out the Second Largest Number:
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+
+int secondLargest(int arr[], int n) {
+	
+	int secLargest = -1, largest = INT_MIN;
+	
+	for(int i = 0; i < n; i++) {
+		if(largest < arr[i]) {
+			largest = arr[i];
+		}
+	}
+	
+	for(int i = 0; i < n; i++) {
+		if(arr[i] > secLargest && arr[i] < largest) {
+			secLargest = arr[i];
+		}
+	}
+	
+	return secLargest;
+}
+
+int main() {
+	int n;
+	cin >> n;
+	int arr[n];
+	for(int i = 0;  i < n; i++) {
+		cin >> arr[i];
+	}
+	
+	cout << secondLargest(arr, n);
+}
+```
+
+## Adam decides to do some charity work. Gives `i^2` in `(1 < = i < = n)` days, find the number of coins:
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+
+int adamCharity(int n) {
+	
+	int charitySum = 0;
+	
+	for(int i = 1; i <= n; i++) {
+		charitySum += pow(i,2); // means i*i
+	}
+	
+	return charitySum;
+}
+
+int main() {
+	int n;
+	cin >> n;
+	
+	cout << adamCharity(n);
+}
+```
+
+## Perform a function to reverse a string word-wise:
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+
+string reverseString(string s) {
+	
+	int left = 0, right = s.length() - 1;
+	string temp = "", result = "";
+	
+	while(left <= right) {
+		char ch = s[left];
+		if(ch != ' ') {
+			temp += ch;
+		} else if(ch == ' ') {
+			if(result != "")
+				result = temp + " " + result;
+			else 
+				result = temp;
+			temp = "";
+		}
+		left++;
+	}
+	
+	if(temp != "") {
+		if(result != "")
+			result = temp + " " + result;
+		else
+			result = temp;
+	}
+	return result;
+}
+
+int main() {
+	string str;
+	getline(cin, str);
+	
+	cout << reverseString(str);
+}
+```
+
+## Find the sum of the divisors for the N integer number:
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+
+int sumOfDivisor(int n) {
+	
+	int sum = 0;
+	
+	for(int i = 1; i <= n; i++) {
+		if(n%i == 0)
+			sum += i;
+	}
+	
+	return sum;
+}
+
+int main() {
+	int n;
+	cin >> n;
+	
+	cout << sumOfDivisor(n);
+}
+```
+
+## Finds out the maximum number that can be formed by permutation:
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+
+int maxNumber(int arr[], int n) {
+	
+	vector<int> singleValued;
+	string maxi;
+	
+	for(int i = 0; i < n; i++) {
+		while(arr[i] != 0) {
+			singleValued.push_back(arr[i]%10);
+			arr[i] /= 10;
+		}
+	}
+	
+	sort(singleValued.begin(), singleValued.end());
+	
+	for(int i = singleValued.size() - 1; i >= 0; i--) {
+		maxi += singleValued[i] + '0';
+	}
+	
+	int maximum = stoi(maxi);
+	
+	return maximum;
+}
+
+int main() {
+	int size;
+	cin >> size;
+	int arr[size];
+	for(int i = 0; i < size; i++) {
+		cin >> arr[i];
+	}
+	
+	cout << maxNumber(arr, size);
+}
+```
