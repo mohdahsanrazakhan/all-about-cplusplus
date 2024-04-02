@@ -1,5 +1,17 @@
 # Coding Questions
 
+## INDEX:
+1. [Sum of second largest of (Even/Odd)](#sum-of-second-largest-of-evenodd)
+2. [Perform the function check password](#perform-the-function-check-password)
+3. [Rat Count House](#rat-count-house)
+4. [The binary number system only uses two digits 1 and 0](#the-binary-number-system-only-uses-two-digits-1-and-0)
+5. [Find and return the number of elements of `arr` having an absolute difference of less than or equal to `diff` with `num`](#find-and-return-the-number-of-elements-of-arr-having-an-absolute-difference-of-less-than-or-equal-to-diff-with-num)
+6. [Find the sum of all numbers in range from 1 to m (both inclusive) that are not divisible by n](#find-the-sum-of-all-numbers-in-range-from-1-to-m-both-inclusive-that-are-not-divisible-by-n)
+7. [Find the sum of second largest element from the even positions and second smallest from the odd position of given arr](#find-the-sum-of-second-largest-element-from-the-even-positions-and-second-smallest-from-the-odd-position-of-given-arr)
+8. [Write a function to validate if the provided two strings are anagrams or not. If the two strings are anagrams, then return yes. Otherwise, return no](#write-a-function-to-validate-if-the-provided-two-strings-are-anagrams-or-not-if-the-two-strings-are-anagrams-then-return-yes-otherwise-return-no)
+9. [Perform the following function: `productSmallPair(sum,arr)`](#perform-the-following-function-productsmallpairsumarr)
+10. [Execute the function numberOfCarry(int num1, int num2)](#execute-the-function-numberofcarryint-num1-int-num2)
+
 ## Sum of second largest of (Even/Odd):
 ```c++
 #include<bits/stdc++.h>
@@ -203,7 +215,7 @@ int main() {
 }
 ```
 
-## find and return the number of elements of `arr` having an absolute difference of less than or equal to `diff` with `num`:
+## Find and return the number of elements of `arr` having an absolute difference of less than or equal to `diff` with `num`:
 ```c++
 #include<bits/stdc++.h>
 using namespace std;
@@ -352,7 +364,7 @@ int main() {
 }
 ```
 
-## Perform the following function. `productSmallPair(sum,arr)`:
+## Perform the following function: `productSmallPair(sum,arr)`:
 ```c++
 #include<bits/stdc++.h>
 using namespace std;
