@@ -11,6 +11,16 @@
 8. [Write a function to validate if the provided two strings are anagrams or not. If the two strings are anagrams, then return yes. Otherwise, return no](#write-a-function-to-validate-if-the-provided-two-strings-are-anagrams-or-not-if-the-two-strings-are-anagrams-then-return-yes-otherwise-return-no)
 9. [Perform the following function: `productSmallPair(sum,arr)`](#perform-the-following-function-productsmallpairsumarr)
 10. [Execute the function numberOfCarry(int num1, int num2)](#execute-the-function-numberofcarryint-num1-int-num2)
+11. [Execute the function `numberOfCarry(int num1, int num2)`](#execute-the-function-numberofcarryint-num1-int-num2)
+12. [Execute this function `maxInArray(int arr[], int length)`](#execute-this-function-maxinarrayint-arr-int-length)
+13. [Perform the function: `chats_dectonbase(int n, int num)`](#perform-the-function-chats_dectonbaseint-n-int-num)
+14. [Perform the function: `replaceCharacter(char str1, char ch1, int l, char ch2)`](#perform-the-function-replacecharacterchar-str1-char-ch1-int-l-char-ch2)
+15. [Perform the function: `operationChoices(int c, int n, int a, int b)`](#perform-the-function-operationchoicesint-c-int-n-int-a-int-b)
+16. [Perform the function: `calculate(int m, int n)`](#perform-the-function-calculateint-m-int-n)
+17. [Execute this function: `maxInArray(int arr[], int length)`](#execute-this-function-maxinarrayint-arr-int-length-1)
+18. [Execute the function: `changeFrequentCharacter(char str, char x)`](#execute-the-function-changefrequentcharacterchar-str-char-x)
+19. [Find the number that has the highest frequency](#find-the-number-that-has-the-highest-frequency)
+20. [Execute the function: `mergeArray(int a[], int b[], int aSize, int bSize)`](#execute-the-function-mergearrayint-a-int-b-int-asize-int-bsize)
 
 ## Sum of second largest of (Even/Odd):
 ```c++
