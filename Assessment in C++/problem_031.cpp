@@ -1,39 +1,47 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-string findEquation(vector<pair<int, int>>& points) {
-	int x1 = points[0].first, y1 = points[0].second;
-	int x2 = points[1].first, y2 = points[1].second;
-	double slope = (x2 != x1) ? (double)(y2 - 21) / (x2 - x1) : numeric_limits<double>::infinity();
-	
-	for(int i = 2; i < points.size(); i++) {
-		int x = points[i].first, y = points[i].second;
-		if((x - x1) == 0) {
-			if(slope != numeric_limits<double>::infinity())
-				return "0";
-		} else if((double)(y - y1) / (x - x1) != slope) {
-			return "0";
-		}
-	}
-	
-	int A = y1 - slope * x1;
-	int B = -slope;
-	int C = 0;
-	if(B != 0) {
-		return to_string(A) + "x + " + to_string(B) + "y + " + to_string(C) + " = 0";
-	} else {
-		return "x - " + to_string(A/B) + " = 0";
-	}
+bool isCollinear(const vector<int>& P1, const vector<int>& P2, const vector<int>& P3) {
+    int X1 = P1[0], Y1 = P1[1];
+    int X2 = P2[0], Y2 = P2[1];
+    int X3 = P3[0], Y3 = P3[1];
+
+    return (X1 * (Y2 - Y3) + X2 * (Y3 - Y1) + X3 * (Y1 - Y2)) == 0;
+}
+
+bool arePointsCollinear(const vector<vector<int>>& points) {
+    int N = points.size();
+    if (N <= 2) {
+        return true; // Two points are always collinear
+    }
+
+    for (int i = 0; i <= N - 3; ++i) {
+        if (!isCollinear(points[i], points[i + 1], points[i + 2])) {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 int main() {
-	int n;
-	cin >> n;
-	vector<pair<int, int>> points(n);
-	for(int i = 0; i < n; i++) {
-		cin >> points[i].first >> points[i].second;
-	}
-	
-	cout << findEquation(points);
-	return 0;
+    int N;
+    cout << "Enter the number of points: ";
+    cin >> N;
+
+    vector<vector<int>> points(N, vector<int>(2));
+    cout << "Enter the points (x y): ";
+    for (int i = 0; i < N; ++i) {
+        cin >> points[i][0] >> points[i][1];
+    }
+
+    if (arePointsCollinear(points)) {
+        cout << "Points are collinear." << endl;
+    } else {
+        cout << "Points are not collinear." << endl;
+    }
+
+    return 0;
 }
+

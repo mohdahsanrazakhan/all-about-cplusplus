@@ -21,6 +21,16 @@
 18. [Execute the function: `changeFrequentCharacter(char str, char x)`](#execute-the-function-changefrequentcharacterchar-str-char-x)
 19. [Find the number that has the highest frequency](#find-the-number-that-has-the-highest-frequency)
 20. [Execute the function: `mergeArray(int a[], int b[], int aSize, int bSize)`](#execute-the-function-mergearrayint-a-int-b-int-asize-int-bsize)
+21. [Execute the function: `kthLargestNumber(int arr[], int n, int k)`](#execute-the-function-kthlargestnumberint-arr-int-n-int-k)
+22. [Execute the function `autoCount(n)`](#execute-the-function-autocountn)
+23. [Find if the given string is a palindrome or not](#find-if-the-given-string-is-a-palindrome-or-not)
+24. [Program to print Collatz Sequence](#program-to-print-collatz-sequence)
+25. [Print a given matrix in spiral form](#print-a-given-matrix-in-spiral-form)
+26. [Find out the Second Largest Number](#find-out-the-second-largest-number)
+27. [Adam decides to do some charity work. Gives `i^2` in `(1 < = i < = n)` days, find the number of coins](#adam-decides-to-do-some-charity-work-gives-i2-in-1---i---n-days-find-the-number-of-coins)
+28. [Perform a function to reverse a string word-wise](#perform-a-function-to-reverse-a-string-word-wise)
+29. [Find the sum of the divisors for the N integer number](#find-the-sum-of-the-divisors-for-the-n-integer-number)
+30. [Finds out the maximum number that can be formed by permutation](#finds-out-the-maximum-number-that-can-be-formed-by-permutation)
 
 ## Sum of second largest of (Even/Odd):
 ```c++
